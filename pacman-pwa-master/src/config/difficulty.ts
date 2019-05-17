@@ -2,8 +2,8 @@ export const difficulty = [
   {
     multiplier: 1,
     powerModeTime: 7000,
-    pacmanSpeed: 100,
-    ghostSpeed: 90,
+    pacmanSpeed: 110,
+    ghostSpeed: 35,
     wavesDurations: [
       {
         scatter: 7000,

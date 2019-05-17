@@ -74,7 +74,7 @@ export class GameState extends State {
     this.onPowerModeEnd = this.onPowerModeEnd.bind(this);
   }
 
-  init(level = 3, lifes = 1, score = 0) {
+  init(level = 1, lifes = 1, score = 0) {
     this.isTouch = this.game.device.touch;
     this.level = level;
     this.lifes = lifes;

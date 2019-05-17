@@ -7,25 +7,25 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.raycomsoluciones.pagatodoparatodo"
     },
     "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "com.raycomsoluciones.caelarca"
+      "PACKAGE_NAME": "com.raycomsoluciones.pagatodoparatodo"
     },
-    "cordova-plugin-android-permissions": {
-      "PACKAGE_NAME": "com.raycomsoluciones.caelarca"
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.raycomsoluciones.pagatodoparatodo"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.raycomsoluciones.pagatodoparatodo"
     },
     "cordova-sqlite-storage": {
-      "PACKAGE_NAME": "com.raycomsoluciones.caelarca"
+      "PACKAGE_NAME": "com.raycomsoluciones.pagatodoparatodo"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.raycomsoluciones.caelarca"
+      "PACKAGE_NAME": "com.raycomsoluciones.pagatodoparatodo"
     }
   }
 }

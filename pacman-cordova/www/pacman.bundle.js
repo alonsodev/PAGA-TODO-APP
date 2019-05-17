@@ -191,7 +191,7 @@ e.prototype.setScale=function(){this.game.scale.pageAlignHorizontally=true;this.
 function(t,e,i){"use strict";var s=this&&this.__extends||function(){var t=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,e){t.__proto__=e}||function(t,e){for(var i in e)if(e.hasOwnProperty(i))t[i]=e[i]};return function(e,i){t(e,i);function s(){this.constructor=e}e.prototype=i===null?Object.create(i):(s.prototype=i.prototype,new s)}}();Object.defineProperty(e,"__esModule",{value:true});var r=i(10);var n=i(17);var a=i(0);var o=i(15);var h=i(20);var l=i(22);var u=i(19);var c=i(18);var d=i(21);var f=i(23);/**
  * Main game state.
  */
-var p=/** @class */function(t){s(e,t);function e(){var e=t.call(this)||this;e.ghostsHome=new Phaser.Point;e.lifesArea=[];e.onPowerModeStart=e.onPowerModeStart.bind(e);e.onPowerModeEnd=e.onPowerModeEnd.bind(e);return e}e.prototype.init=function(t,e,i){if(t===void 0){t=3}if(e===void 0){e=1}if(i===void 0){i=0}this.isTouch=this.game.device.touch;this.level=t;this.lifes=e;this.score=i;this.difficlty=o.difficulty[this.level-1];this.multi=this.difficlty.multiplier;this.active=true;this.max_counter=60;this.counter=this.max_counter};e.prototype.render=function(){if(this.active)this.game.debug.text("Tiempo restante: "+this.counter+" segundos",82,42)};e.prototype.create=function(){this.setTiles();this.initLayers();this.resizeMap();this.enablePhysics();this.setControls();
+var p=/** @class */function(t){s(e,t);function e(){var e=t.call(this)||this;e.ghostsHome=new Phaser.Point;e.lifesArea=[];e.onPowerModeStart=e.onPowerModeStart.bind(e);e.onPowerModeEnd=e.onPowerModeEnd.bind(e);return e}e.prototype.init=function(t,e,i){if(t===void 0){t=1}if(e===void 0){e=1}if(i===void 0){i=0}this.isTouch=this.game.device.touch;this.level=t;this.lifes=e;this.score=i;this.difficlty=o.difficulty[this.level-1];this.multi=this.difficlty.multiplier;this.active=true;this.max_counter=60;this.counter=this.max_counter};e.prototype.render=function(){if(this.active)this.game.debug.text("Tiempo restante: "+this.counter+" segundos",82,42)};e.prototype.create=function(){this.setTiles();this.initLayers();this.resizeMap();this.enablePhysics();this.setControls();
 //this.createButton();
 this.createTimer();this.createPortals();this.createPellets();
 // this.createPills();
@@ -203,7 +203,9 @@ this.timer.loop(1e3,this.updateCounter,this)};e.prototype.updateCounter=function
 // Ghost eats Pacman.
 if(this.counter<0){this.counter=0;this.pillxs.callAll("stop",undefined);this.updateLifes(-1);
 // Game over.
-console.log(this.lifes);if(this.lifes===0){this.pacman.sfx.munch.stop();this.sfx.over.play();this.active=false;this.pacman.die();this.showNotification("Perdiste intente nuevamente.");this.game.state.start("the_state_name")}else{
+console.log(this.lifes);if(this.lifes===0){this.pacman.sfx.munch.stop();this.sfx.over.play();this.active=false;
+//  this.pacman.die();
+this.showNotification("Perdiste intente nuevamente.");this.game.state.start("the_state_name")}else{
 // Minus 1 Pacman life.
 this.counter=this.max_counter;this.pacman.die();this.ghosts.callAll("respawn",undefined)}}}};e.prototype.update=function(){
 // Check if game is active.
@@ -41135,7 +41137,7 @@ return r.call(this,t)}}}var l=[];var u=false;var c;var d=-1;function f(){if(!u||
 function m(t,e){this.fun=t;this.array=e}m.prototype.run=function(){this.fun.apply(null,this.array)};i.title="browser";i.browser=true;i.env={};i.argv=[];i.version="";// empty string to avoid regexp issues
 i.versions={};function g(){}i.on=g;i.addListener=g;i.once=g;i.off=g;i.removeListener=g;i.removeAllListeners=g;i.emit=g;i.prependListener=g;i.prependOnceListener=g;i.listeners=function(t){return[]};i.binding=function(t){throw new Error("process.binding is not supported")};i.cwd=function(){return"/"};i.chdir=function(t){throw new Error("process.chdir is not supported")};i.umask=function(){return 0}},/* 15 */
 /***/
-function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:true});e.difficulty=[{multiplier:1,powerModeTime:7e3,pacmanSpeed:100,ghostSpeed:90,wavesDurations:[{scatter:7e3,chase:2e4},{scatter:7e3,chase:2e4},{scatter:5e3,chase:2e4},{scatter:5e3}]},{multiplier:2,powerModeTime:6e3,pacmanSpeed:110,ghostSpeed:100,wavesDurations:[{scatter:5e3,chase:15e3},{scatter:5e3,chase:2e4},{scatter:3e3,chase:15e3},{scatter:3e3}]},{multiplier:1,powerModeTime:5e3,pacmanSpeed:120,ghostSpeed:110,wavesDurations:[{scatter:3e3,chase:2e4},{scatter:3e3,chase:2e4},{scatter:3e3,chase:15e3},{scatter:3e3}]}]},/* 16 */
+function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:true});e.difficulty=[{multiplier:1,powerModeTime:7e3,pacmanSpeed:110,ghostSpeed:35,wavesDurations:[{scatter:7e3,chase:2e4},{scatter:7e3,chase:2e4},{scatter:5e3,chase:2e4},{scatter:5e3}]},{multiplier:2,powerModeTime:6e3,pacmanSpeed:110,ghostSpeed:100,wavesDurations:[{scatter:5e3,chase:15e3},{scatter:5e3,chase:2e4},{scatter:3e3,chase:15e3},{scatter:3e3}]},{multiplier:1,powerModeTime:5e3,pacmanSpeed:120,ghostSpeed:110,wavesDurations:[{scatter:3e3,chase:2e4},{scatter:3e3,chase:2e4},{scatter:3e3,chase:15e3},{scatter:3e3}]}]},/* 16 */
 /***/
 function(t,e,i){"use strict";var s=this&&this.__extends||function(){var t=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,e){t.__proto__=e}||function(t,e){for(var i in e)if(e.hasOwnProperty(i))t[i]=e[i]};return function(e,i){t(e,i);function s(){this.constructor=e}e.prototype=i===null?Object.create(i):(s.prototype=i.prototype,new s)}}();Object.defineProperty(e,"__esModule",{value:true});i(3);i(5);var r=i(4);i(6);var n=i(7);var a=i(9);var o=i(8);/**
  * Main game object.
